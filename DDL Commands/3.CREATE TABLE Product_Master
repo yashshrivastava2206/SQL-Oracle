@@ -1,0 +1,10 @@
+CREATE TABLE Product_Master ( 
+    Product_No VARCHAR(6), 
+    Description VARCHAR(20), 
+    Profit_percentage NUMBER(6), 
+    Unit_Measure VARCHAR(10), 
+    Qty_On_Hand NUMBER(6), 
+    Recorder_Lvl NUMBER(6), 
+    Sell_Price NUMBER(7,2), 
+    Cost_Price NUMBER(7,2) 
+)
