@@ -1,0 +1,8 @@
+Syntax:
+CREATE TABLE <tablename>
+(
+<column1> <datatype>(Size),
+<column2> <datatype>(Size),
+<column3> <datatype>(Size),
+<columnn> <datatype>(Size)
+);
