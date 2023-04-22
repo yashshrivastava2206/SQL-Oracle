@@ -1,14 +1,3 @@
-/*
-Syntax:
-CREATE TABLE <tablename>
-(
-<column1> <datatype>(Size),
-<column2> <datatype>(Size),
-<column3> <datatype>(Size),
-<columnn> <datatype>(Size)
-);
-*/
-
 CREATE TABLE Client_Master ( 
     Client_No VARCHAR(6), 
     Name VARCHAR(20), 
