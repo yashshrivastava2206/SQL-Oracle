@@ -1,0 +1,77 @@
+----------------------------------------------------------------------------------------------
+CREATE TAble student( 
+	Roll number(1), 
+    F_Name VArchar2(12), 
+    M_Name varchar2(12), 
+    L_Name varchar2(12), 
+    Sec char(1), 
+    City varchar2(15), 
+    Area varchar2(20), 
+    HouseNo Varchar2(5), 
+    Div Number(1) 
+)
+----------------------------------------------------------------------------------------------
+insert into student( 
+	Roll ,F_Name ,M_Name ,L_Name ,Sec ,City ,Area ,HouseNo , Div 
+) 
+    values( 
+    1,'Akash','Kumar','Jain','A','Ghaziabad','Rakesh Marg','C-355',1 
+    )
+----------------------------------------------------------------------------------------------
+insert into student( 
+	Roll ,F_Name ,M_Name ,L_Name ,Sec ,City ,Area ,HouseNo , Div 
+) 
+    values( 
+    2,'Manav','Mohan','Sharma','A','Ghaziabad','Raj Nagar','D-211',2 
+    )
+----------------------------------------------------------------------------------------------
+insert into student( 
+	Roll ,F_Name ,M_Name ,L_Name ,Sec ,City ,Area ,HouseNo , Div 
+) 
+    values( 
+    3,'Chandra','Mohan','Batra','B','Meerut','Minto Road','A-201',3 
+    )
+
+----------------------------------------------------------------------------------------------
+insert into student( 
+	Roll ,F_Name ,M_Name ,L_Name ,Sec ,City ,Area ,HouseNo , Div 
+) 
+    values( 
+    4,'Rakesh','Chandra','Gupta','B','Kanpur','Nehru Marg','A-145','' 
+    )
+----------------------------------------------------------------------------------------------
+insert into student( 
+	Roll ,F_Name ,M_Name ,L_Name ,Sec ,City ,Area ,HouseNo , Div 
+) 
+    values( 
+    5,'Sagar','Pratap','Singh','A','Meerut','Gandhi Marg','C-35',0 
+    )
+----------------------------------------------------------------------------------------------
+1) SELECT Roll, concat(F_name,concat(' ',Concat(M_name,Concat(' ',L_name))))"Name" from Student;
+2) select roll,concat(F_name,concat(' ',Concat(M_name,Concat(' ',L_name))))"Name" ,concat(HouseNo,concat(',',Concat(Area,Concat(',',City))))"Address" from Student;
+3) select roll,concat(substr(F_name,1,1),concat('.',Concat(substr(M_name,1,1),Concat('. ',L_name))))"Name" From Student;
+4) select * from student order by sec asc;
+5) select * from student order by sec desc;
+6) select * from student order by sec,F_Name asc;
+7) SELECT roll, F_name, LPAD(city, 5, '*') as city FROM student;
+8) Select * from student where div is NULL;
+9) select Distinct(City) from student;
+10) 
+SELECT Roll, F_name,
+CASE
+    WHEN Div = 1 THEN 'FIRST'
+    WHEN Div = 2 THEN 'SECOND'
+    WHEN Div = 3 THEN 'THIRD'
+    WHEN Div = 0 THEN 'FAIL'
+    ELSE 'NOT AWARDED'
+END AS Division
+FROM student;
+
+11) 
+SELECT Roll, F_name,
+CASE
+    WHEN sec = 'A' THEN '1'
+    WHEN sec = 'B' THEN '2'
+    ELSE 'NOT AWARDED'
+END AS Section
+FROM student;
