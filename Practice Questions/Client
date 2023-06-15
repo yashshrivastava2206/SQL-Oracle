@@ -1,0 +1,47 @@
+--Creating a table name client
+
+create table client(
+    C_ID NUMBER(2),
+    C_name varchar2(25),
+    Address varchar2(25)
+);
+
+--Creating procedure for inserting
+
+create or replace procedure clt_insert
+(V_ID number,
+    v_name varchar2,
+    v_address varchar2)
+AS
+BEGIN
+insert into client(C_id,c_name,Address)
+    values(v_id,v_name,v_address);
+end;
+
+--inserting a record using prodedure
+
+begin
+clt_insert(2,'Aman','Jhansi,U.P');
+end;
+
+select * from client;
+
+--Create Trigger 
+
+create or replace trigger tri_clt
+after insert or update or delete on client
+begin
+if inserting then
+dbms_output.put_line('Record Inserted Successfully');
+elsif updating then
+dbms_output.put_line('Record Updated Successfully');
+elsif deleting then
+dbms_output.put_line('Record Deleted Successfully');
+end if;
+end;
+
+--Delete one record 
+delete  from client where C_ID=1;
+
+
+select * from client;
